@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hỏi và Đáp - Trường Trung Học Phổ Thông</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .accordion {
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px 0;
+            cursor: pointer;
+            padding: 10px;
+            text-align: left;
+            outline: none;
+            font-size: 1.2rem;
+        }
+
+        .panel {
+            padding: 0 10px;
+            display: none;
+            overflow: hidden;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="path/to/logo.png" alt="Logo Trường Trung Học Phổ Thông" class="logo">
+                <h1 class="school-name">Trường Trung Học Phổ Thông</h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                    <li><a href="about.html" class="nav-link">Giới thiệu</a></li>
+                    <li><a href="contact.html" class="nav-link">Liên hệ</a></li>
+                    <li><a href="feedback.html" class="nav-link">Góp ý</a></li>
+                    <li><a href="faq.html" class="nav-link">Hỏi và Đáp</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="intro">
+            <h2>Các câu hỏi thường gặp</h2>
+            <p>Dưới đây là một số câu hỏi thường gặp mà chúng tôi đã nhận được từ học sinh và phụ huynh.</p>
+        </section>
+
+        <button class="accordion">Câu hỏi 1: Trường có những chương trình gì?</button>
+        <div class="panel">
+            <p>Trường cung cấp nhiều chương trình học đa dạng từ văn hóa đến thể thao, bao gồm các môn học chính và các hoạt động ngoại khóa.</p>
+        </div>
+
+        <button class="accordion">Câu hỏi 2: Làm thế nào để đăng ký nhập học?</button>
+        <div class="panel">
+            <p>Bạn có thể đăng ký trực tuyến qua trang web của trường hoặc đến trực tiếp văn phòng tuyển sinh để được hướng dẫn.</p>
+        </div>
+
+        <button class="accordion">Câu hỏi 3: Trường có hỗ trợ học bổng không?</button>
+        <div class="panel">
+            <p>Có, trường có nhiều chương trình học bổng dành cho học sinh xuất sắc và có hoàn cảnh khó khăn. Vui lòng liên hệ với văn phòng tuyển sinh để biết thêm chi tiết.</p>
+        </div>
+
+        <button class="accordion">Câu hỏi 4: Thời gian học của trường là gì?</button>
+        <div class="panel">
+            <p>Thời gian học bắt đầu từ 7:30 sáng đến 4:30 chiều từ thứ Hai đến thứ Sáu.</p>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Trường Trung Học Phổ Thông. Mọi quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html> 
