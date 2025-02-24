@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,107 +27,75 @@
             color: #333;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 0;
+            list-style: none;
         }
 
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
+        .grid li {
             background: #007bff;
-            color: white;
-        }
-
-        tr:hover {
-            background: #f1f1f1;
-        }
-
-        .disabled {
-            color: #aaa;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s, opacity 0.3s;
+            opacity: 0.5;
             pointer-events: none;
         }
 
-        a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
+        .grid li.available {
+            opacity: 1;
+            pointer-events: auto;
         }
 
-        a:hover {
-            color: #0056b3;
+        .grid li:hover {
+            background: #0056b3;
+        }
+
+        .grid a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: block;
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <h1>Tổng hợp Labs</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Lab</th>
-                    <th>Status</th>
-                    <th>Last Updated</th>
-                </tr>
-            </thead>
-            <tbody id="lab-list">
-                <!-- Danh sách Labs sẽ được tạo tự động -->
-            </tbody>
-        </table>
+        <ul class="grid">
+            <li><a href="./Exercises/Solutions/Lab01/index.html">Lab 01</a></li>
+            <li><a href="./Exercises/Solutions/Lab02/index.html">Lab 02</a></li>
+            <li><a href="./Exercises/Solutions/Lab03/index.html">Lab 03</a></li>
+            <li><a href="./Exercises/Solutions/Lab04/index.html">Lab 04</a></li>
+            <li><a href="./Exercises/Solutions/Lab05/index.html">Lab 05</a></li>
+            <li><a href="./Exercises/Solutions/Lab06/index.html">Lab 06</a></li>
+            <li><a href="./Exercises/Solutions/Lab07/index.html">Lab 07</a></li>
+            <li><a href="./Exercises/Solutions/Lab08/index.html">Lab 08</a></li>
+            <li><a href="./Exercises/Solutions/Lab09/index.html">Lab 09</a></li>
+            <li><a href="./Exercises/Solutions/Lab10/index.html">Lab 10</a></li>
+            <li><a href="./Exercises/Solutions/Lab11/index.html">Lab 11</a></li>
+            <li><a href="./Exercises/Solutions/Lab12/index.html">Lab 12</a></li>
+            <li><a href="./Exercises/Solutions/Lab13/index.html">Lab 13</a></li>
+            <li><a href="./Exercises/Solutions/Lab14/index.html">Lab 14</a></li>
+            <li><a href="./Exercises/Solutions/Lab15/index.html">Lab 15</a></li>
+            <li><a href="./Exercises/Solutions/Lab16/index.html">Lab 16</a></li>
+        </ul>
     </div>
-
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const labList = document.getElementById("lab-list");
-            const repoOwner = 'truongpv03';
-            const repoName = 'WEB1013';
-            const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/Exercises/Solutions`;
-
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach((item, index) => {
-                        if (item.type === 'dir' && item.name.startsWith('Lab')) {
-                            const labLink = `./Exercises/Solutions/${item.name}/index.html`;
-                            const row = document.createElement("tr");
-                            row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td><a href="${labLink}" class="disabled">${item.name}</a></td>
-                    <td class="status">Checking...</td>
-                    <td class="last-updated">-</td>
-                `;
-                            labList.appendChild(row);
-
-                            fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/commits?path=Exercises/Solutions/${item.name}/index.html`)
-                                .then(commitResponse => commitResponse.json())
-                                .then(commitData => {
-                                    if (commitData.length > 0) {
-                                        row.querySelector("a").classList.remove("disabled");
-                                        row.querySelector(".status").textContent = "Available";
-                                        row.querySelector(".last-updated").textContent = new Date(commitData[0].commit.author.date).toLocaleDateString();
-                                    } else {
-                                        row.querySelector(".status").textContent = "Not Available";
-                                    }
-                                })
-                                .catch(error => {
-                                    console.error("Error checking commit:", error);
-                                    row.querySelector(".status").textContent = "Not Available";
-                                });
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll(".grid li a");
+            links.forEach(link => {
+                fetch(link.href, { method: 'HEAD' })
+                    .then(response => {
+                        if (response.ok) {
+                            link.parentElement.classList.add("available");
                         }
-                    });
-                })
-                .catch(error => console.error("Error loading repository contents:", error));
+                    })
+                    .catch(error => console.error("Error checking file: ", link.href, error));
+            });
         });
-
     </script>
 </body>
-
 </html>
