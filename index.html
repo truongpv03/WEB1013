@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng hợp Labs và README</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+        .disabled {
+            color: #aaa;
+            pointer-events: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tổng hợp Labs</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Lab</th>
+                    <th>Status</th>
+                    <th>Last Updated</th>
+                </tr>
+            </thead>
+            <tbody id="lab-list">
+                <!-- Danh sách Labs sẽ được tạo tự động -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const labList = document.getElementById("lab-list");
+            const repoOwner = 'truongpv03';
+            const repoName = 'WEB1013';
+            const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/Exercises/Solutions`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach((item, index) => {
+                        if (item.type === 'dir' && item.name.startsWith('Lab')) {
+                            const labLink = `./Exercises/Solutions/${item.name}/index.html`;
+                            const row = document.createElement("tr");
+                            row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td><a href="${labLink}" class="disabled">${item.name}</a></td>
+                    <td class="status">Checking...</td>
+                    <td class="last-updated">-</td>
+                `;
+                            labList.appendChild(row);
+
+                            fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/commits?path=Exercises/Solutions/${item.name}/index.html`)
+                                .then(commitResponse => commitResponse.json())
+                                .then(commitData => {
+                                    if (commitData.length > 0) {
+                                        row.querySelector("a").classList.remove("disabled");
+                                        row.querySelector(".status").textContent = "Available";
+                                        row.querySelector(".last-updated").textContent = new Date(commitData[0].commit.author.date).toLocaleDateString();
+                                    } else {
+                                        row.querySelector(".status").textContent = "Not Available";
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error("Error checking commit:", error);
+                                    row.querySelector(".status").textContent = "Not Available";
+                                });
+                        }
+                    });
+                })
+                .catch(error => console.error("Error loading repository contents:", error));
+        });
+
+    </script>
+</body>
+
+</html>
