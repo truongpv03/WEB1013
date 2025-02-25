@@ -1,47 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tổng hợp Labs và README</title>
+    <title>Tổng hợp Labs và ASM</title>
     <style>
+        :root {
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --background: #f4f4f4;
+            --text-color: #333;
+            --white: #fff;
+            --border-radius: 8px;
+            --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: var(--background);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             text-align: center;
+            color: var(--text-color);
         }
 
         .container {
-            background: white;
+            background: var(--white);
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            width: 90%;
-            max-width: 800px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            width: 95%;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        header {
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-color);
         }
 
         h1 {
-            color: #333;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        main {
+            margin-top: 20px;
+        }
+
+        section {
+            padding: 15px 0;
+            border-top: 2px solid var(--primary-color);
+        }
+
+        section:first-of-type {
+            border-top: none;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
             padding: 0;
             list-style: none;
+            max-width: 600px;
+            margin: auto;
         }
 
         .grid li {
-            background: #007bff;
-            padding: 10px;
+            background: var(--primary-color);
+            padding: 12px;
             border-radius: 5px;
             transition: background 0.3s, opacity 0.3s;
             opacity: 0.5;
             pointer-events: none;
+            text-align: center;
         }
 
         .grid li.available {
@@ -50,51 +89,138 @@
         }
 
         .grid li:hover {
-            background: #0056b3;
+            background: var(--primary-hover);
         }
 
         .grid a {
             text-decoration: none;
-            color: white;
+            color: var(--white);
             font-weight: bold;
             display: block;
+        }
+
+        /* Progress Stepper */
+        .progress-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px 0;
+        }
+
+        .progress-step {
+            width: 100%;
+            height: 6px;
+            background: #ccc;
+            position: relative;
+            transition: background 0.3s;
+        }
+
+        .progress-step.active {
+            background: var(--primary-color);
+        }
+
+        .progress-marker {
+            width: 20px;
+            height: 20px;
+            background: #ccc;
+            border-radius: 50%;
+            position: absolute;
+            top: -7px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: background 0.3s;
+        }
+
+        .progress-marker.active {
+            background: var(--primary-color);
+        }
+
+
+        footer {
+            margin-top: 20px;
+            padding-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Tổng hợp Labs</h1>
-        <ul class="grid">
-            <li><a href="./Exercises/Solutions/Lab01/index.html">Lab 01</a></li>
-            <li><a href="./Exercises/Solutions/Lab02/index.html">Lab 02</a></li>
-            <li><a href="./Exercises/Solutions/Lab03/index.html">Lab 03</a></li>
-            <li><a href="./Exercises/Solutions/Lab04/index.html">Lab 04</a></li>
-            <li><a href="./Exercises/Solutions/Lab05/index.html">Lab 05</a></li>
-            <li><a href="./Exercises/Solutions/Lab06/index.html">Lab 06</a></li>
-            <li><a href="./Exercises/Solutions/Lab07/index.html">Lab 07</a></li>
-            <li><a href="./Exercises/Solutions/Lab08/index.html">Lab 08</a></li>
-            <li><a href="./Exercises/Solutions/Lab09/index.html">Lab 09</a></li>
-            <li><a href="./Exercises/Solutions/Lab10/index.html">Lab 10</a></li>
-            <li><a href="./Exercises/Solutions/Lab11/index.html">Lab 11</a></li>
-            <li><a href="./Exercises/Solutions/Lab12/index.html">Lab 12</a></li>
-            <li><a href="./Exercises/Solutions/Lab13/index.html">Lab 13</a></li>
-            <li><a href="./Exercises/Solutions/Lab14/index.html">Lab 14</a></li>
-            <li><a href="./Exercises/Solutions/Lab15/index.html">Lab 15</a></li>
-            <li><a href="./Exercises/Solutions/Lab16/index.html">Lab 16</a></li>
-            <li><a href="./Exercises/Solutions/Assignment/index.html">Assignment</a></li>
-        </ul>
+        <header>
+            <h1>Tổng hợp Labs và ASM</h1>
+        </header>
+
+        <main>
+            <!-- Section: Labs -->
+            <section>
+                <h2>Labs</h2>
+                <ul class="grid">
+                    <li><a href="./Exercises/Solutions/Lab01/index.html">Lab 01</a></li>
+                    <li><a href="./Exercises/Solutions/Lab02/index.html">Lab 02</a></li>
+                    <li><a href="./Exercises/Solutions/Lab03/index.html">Lab 03</a></li>
+                    <li><a href="./Exercises/Solutions/Lab04/index.html">Lab 04</a></li>
+                    <li><a href="./Exercises/Solutions/Lab05/index.html">Lab 05</a></li>
+                    <li><a href="./Exercises/Solutions/Lab06/index.html">Lab 06</a></li>
+                    <li><a href="./Exercises/Solutions/Lab07/index.html">Lab 07</a></li>
+                    <li><a href="./Exercises/Solutions/Lab08/index.html">Lab 08</a></li>
+                    <li><a href="./Exercises/Solutions/Lab09/index.html">Lab 09</a></li>
+                    <li><a href="./Exercises/Solutions/Lab10/index.html">Lab 10</a></li>
+                    <li><a href="./Exercises/Solutions/Lab11/index.html">Lab 11</a></li>
+                    <li><a href="./Exercises/Solutions/Lab12/index.html">Lab 12</a></li>
+                    <li><a href="./Exercises/Solutions/Lab13/index.html">Lab 13</a></li>
+                    <li><a href="./Exercises/Solutions/Lab14/index.html">Lab 14</a></li>
+                    <li><a href="./Exercises/Solutions/Lab15/index.html">Lab 15</a></li>
+                    <li><a href="./Exercises/Solutions/Lab16/index.html">Lab 16</a></li>
+                </ul>
+            </section>
+
+            <!-- Section: ASM -->
+            <section>
+                <h2>Assignment (ASM)</h2>
+
+                <!-- Progress Stepper -->
+                <div class="progress-container">
+                    <div class="progress-step"><span class="progress-marker"></span></div>
+                    <div class="progress-step"><span class="progress-marker"></span></div>
+                    <div class="progress-step"><span class="progress-marker"></span></div>
+                </div>
+                <ul class="grid">
+                    <li><a href="./Exercises/Solutions/Assignment/phase1/index.html">Giai đoạn 1</a></li>
+                    <li><a href="./Exercises/Solutions/Assignment/phase2/index.html">Giai đoạn 2</a></li>
+                    <li><a href="./Exercises/Solutions/Assignment/final/index.html">Hoàn thành</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Tổng hợp Labs và ASM. Tất cả các quyền được bảo lưu.</p>
+        </footer>
     </div>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", () => {
             const links = document.querySelectorAll(".grid li a");
-            links.forEach(link => {
-                fetch(link.href, { method: 'HEAD' })
+            const progressSteps = document.querySelectorAll(".progress-step");
+            const progressMarkers = document.querySelectorAll(".progress-marker");
+
+            let completedSteps = 0;
+
+            links.forEach((link, index) => {
+                fetch(link.href, { method: "HEAD" })
                     .then(response => {
                         if (response.ok) {
                             link.parentElement.classList.add("available");
+                            if (index >= 3) {
+                                completedSteps++;
+                                progressSteps[index - 3].classList.add("active");
+                                progressMarkers[index - 3].classList.add("active");
+                            }
                         }
                     })
-                    .catch(error => console.error("Error checking file: ", link.href, error));
+                    .catch(error => console.warn(`Không thể kiểm tra: ${link.href}`, error));
             });
         });
     </script>
