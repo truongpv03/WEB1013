@@ -4,55 +4,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chương trình Đào tạo - FPT Polytechnic</title>
-    <meta name="description" content="Website chính thức của FPT Polytechnic">
-    <meta name="keywords" content="FPT, Polytechnic, tuyển sinh, đào tạo, tin tức">
+    <meta name="description" content="Khám phá các chương trình đào tạo chất lượng cao tại FPT Polytechnic">
+    <meta name="keywords" content="FPT, Polytechnic, đào tạo, ngành học, CNTT, thiết kế, kinh tế">
     <meta name="author" content="FPT Polytechnic">
-    
+    <meta property="og:title" content="Chương trình Đào tạo - FPT Polytechnic" />
+    <meta property="og:description" content="Khám phá các chương trình đào tạo chất lượng cao tại FPT Polytechnic" />
+    <meta property="og:image" content="images/banner-dao-tao.jpg" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="logo">FPT POLYTECHNIC</div>
+        <div class="logo">
+            <img src="images/logo.png" alt="FPT Polytechnic Logo" />
+            FPT POLYTECHNIC
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Trang chủ</a></li>
-                <li><a href="dao-tao.html">Đào tạo</a></li>
+                <li><a href="dao-tao.html" class="active">Đào tạo</a></li>
                 <li><a href="hoat-dong-sinh-vien.html">Hoạt động sinh viên</a></li>
                 <li><a href="tuyen-sinh.html">Tuyển sinh</a></li>
                 <li><a href="lien-he.html">Liên hệ</a></li>
             </ul>
         </nav>
-        <div class="search-bar">
-            <input type="text" placeholder="Tìm kiếm">
-            <button>Tìm kiếm</button>
-        </div>
     </header>
 
     <section class="banner">
+        <div class="banner-content">
+            <h1>Chương trình Đào tạo</h1>
+            <p>Đào tạo thực hành - Học để làm việc thực tế</p>
+        </div>
         <img src="images/banner-dao-tao.jpg" alt="Banner Chương trình Đào tạo">
     </section>
 
     <section class="training">
-        <h2>Chương trình Đào tạo</h2>
-        <p>FPT Polytechnic cung cấp các chương trình đào tạo chuyên sâu trong nhiều lĩnh vực.</p>
-        <div class="course-list">
-            <article>
-                <h3>Ngành Công nghệ Thông tin</h3>
-                <p>Gồm các chuyên ngành: Lập trình Web, Ứng dụng phần mềm, An ninh mạng.</p>
-            </article>
-            <article>
-                <h3>Ngành Kinh tế - Quản trị</h3>
-                <p>Gồm các chuyên ngành: Digital Marketing, Quản trị doanh nghiệp.</p>
-            </article>
-            <article>
-                <h3>Ngành Thiết kế Đồ họa</h3>
-                <p>Chuyên sâu về thiết kế sáng tạo, xử lý hình ảnh, làm phim và hoạt hình.</p>
-            </article>
+        <div class="container">
+            <h2>Chương trình Đào tạo</h2>
+            <p class="section-desc">FPT Polytechnic cung cấp các chương trình đào tạo chuyên sâu trong nhiều lĩnh vực, đáp ứng nhu cầu nhân lực chất lượng cao của doanh nghiệp.</p>
+            
+            <div class="course-list">
+                <article>
+                    <div class="course-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Ngành Công nghệ Thông tin</h3>
+                    <div class="course-details">
+                        <p>Gồm các chuyên ngành:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Lập trình Web</li>
+                            <li><i class="fas fa-check"></i> Ứng dụng phần mềm</li>
+                            <li><i class="fas fa-check"></i> An ninh mạng</li>
+                        </ul>
+                        <div class="course-stats">
+                            <div class="stat">
+                                <span class="number">2.5</span>
+                                <span class="label">Năm</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">98%</span>
+                                <span class="label">Việc làm</span>
+                            </div>
+                        </div>
+                        <a href="#" class="course-btn">Xem chi tiết</a>
+                    </div>
+                </article>
+
+                <article>
+                    <div class="course-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Ngành Kinh tế - Quản trị</h3>
+                    <div class="course-details">
+                        <p>Gồm các chuyên ngành:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Digital Marketing</li>
+                            <li><i class="fas fa-check"></i> Quản trị doanh nghiệp</li>
+                            <li><i class="fas fa-check"></i> Tài chính ngân hàng</li>
+                        </ul>
+                        <div class="course-stats">
+                            <div class="stat">
+                                <span class="number">2.5</span>
+                                <span class="label">Năm</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">95%</span>
+                                <span class="label">Việc làm</span>
+                            </div>
+                        </div>
+                        <a href="#" class="course-btn">Xem chi tiết</a>
+                    </div>
+                </article>
+
+                <article>
+                    <div class="course-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Ngành Thiết kế Đồ họa</h3>
+                    <div class="course-details">
+                        <p>Chuyên sâu về:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Thiết kế sáng tạo</li>
+                            <li><i class="fas fa-check"></i> Xử lý hình ảnh</li>
+                            <li><i class="fas fa-check"></i> Làm phim và hoạt hình</li>
+                        </ul>
+                        <div class="course-stats">
+                            <div class="stat">
+                                <span class="number">2.5</span>
+                                <span class="label">Năm</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">92%</span>
+                                <span class="label">Việc làm</span>
+                            </div>
+                        </div>
+                        <a href="#" class="course-btn">Xem chi tiết</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Điểm nổi bật</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Giảng viên kinh nghiệm</h3>
+                    <p>Đội ngũ giảng viên có nhiều năm kinh nghiệm trong ngành</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Thực hành doanh nghiệp</h3>
+                    <p>Được thực tập tại các doanh nghiệp hàng đầu</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Chứng chỉ quốc tế</h3>
+                    <p>Cơ hội lấy các chứng chỉ được công nhận toàn cầu</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-globe"></i>
+                    <h3>Cơ hội quốc tế</h3>
+                    <p>Chương trình trao đổi sinh viên với các trường đối tác</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Cảm nhận của sinh viên</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"Chương trình đào tạo thực tế giúp tôi tự tin ứng tuyển vào vị trí mong muốn ngay sau khi tốt nghiệp."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/student1.jpg" alt="Nguyễn Văn A">
+                        <div class="author-info">
+                            <h4>Nguyễn Văn A</h4>
+                            <p>Cựu sinh viên ngành CNTT</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"Môi trường học tập năng động và các dự án thực tế giúp tôi phát triển kỹ năng toàn diện."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/student2.jpg" alt="Trần Thị B">
+                        <div class="author-info">
+                            <h4>Trần Thị B</h4>
+                            <p>Sinh viên năm cuối ngành Thiết kế</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 FPT Polytechnic. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về FPT Polytechnic</h3>
+                <p>Đào tạo thực hành chất lượng cao theo nhu cầu doanh nghiệp</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Liên hệ</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 137 Nguyễn Thị Thập, Hà Nội</p>
+                <p><i class="fas fa-phone"></i> 024 7300 1955</p>
+                <p><i class="fas fa-envelope"></i> fptpoly@fpt.edu.vn</p>
+            </div>
+            <div class="footer-section">
+                <h3>Đường dẫn nhanh</h3>
+                <ul>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Quy chế đào tạo</a></li>
+                    <li><a href="#">Chính sách học phí</a></li>
+                    <li><a href="#">Hỗ trợ sinh viên</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FPT Polytechnic. All rights reserved.</p>
+        </div>
     </footer>
+
+    <div id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </body>
 </html>

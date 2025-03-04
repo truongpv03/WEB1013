@@ -4,62 +4,250 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tuyển sinh - FPT Polytechnic</title>
-    <meta name="description" content="Website chính thức của FPT Polytechnic">
-    <meta name="keywords" content="FPT, Polytechnic, tuyển sinh, đào tạo, tin tức">
+    <meta name="description" content="Thông tin tuyển sinh và đăng ký nhập học tại FPT Polytechnic">
+    <meta name="keywords" content="FPT, Polytechnic, tuyển sinh, đăng ký học, xét tuyển">
     <meta name="author" content="FPT Polytechnic">
-    
+    <meta property="og:title" content="Tuyển sinh - FPT Polytechnic" />
+    <meta property="og:description" content="Thông tin tuyển sinh và đăng ký nhập học tại FPT Polytechnic" />
+    <meta property="og:image" content="images/banner-tuyen-sinh.jpg" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="logo">FPT POLYTECHNIC</div>
+        <div class="logo">
+            <img src="images/logo.png" alt="FPT Polytechnic Logo" />
+            FPT POLYTECHNIC
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Trang chủ</a></li>
                 <li><a href="dao-tao.html">Đào tạo</a></li>
                 <li><a href="hoat-dong-sinh-vien.html">Hoạt động sinh viên</a></li>
-                <li><a href="tuyen-sinh.html">Tuyển sinh</a></li>
+                <li><a href="tuyen-sinh.html" class="active">Tuyển sinh</a></li>
                 <li><a href="lien-he.html">Liên hệ</a></li>
             </ul>
         </nav>
-        <div class="search-bar">
-            <input type="text" placeholder="Tìm kiếm">
-            <button>Tìm kiếm</button>
-        </div>
     </header>
 
     <section class="banner">
+        <div class="banner-content">
+            <h1>Tuyển sinh 2024</h1>
+            <p>Khởi đầu sự nghiệp - Thành công tương lai</p>
+            <a href="#register" class="cta-button">Đăng ký ngay</a>
+        </div>
         <img src="images/banner-tuyen-sinh.jpg" alt="Banner Tuyển sinh">
     </section>
 
     <section class="admission-info">
-        <h2>Thông tin Tuyển sinh</h2>
-        <p>FPT Polytechnic tuyển sinh hệ Cao đẳng chính quy theo hình thức xét tuyển học bạ THPT.</p>
-        <div class="admission-steps">
-            <div class="step">
-                <h3>1. Điều kiện xét tuyển</h3>
-                <p>- Tốt nghiệp THPT hoặc tương đương.</p>
-                <p>- Đủ sức khỏe học tập theo quy định.</p>
+        <div class="container">
+            <h2>Thông tin Tuyển sinh</h2>
+            <p class="section-desc">FPT Polytechnic tuyển sinh hệ Cao đẳng chính quy theo hình thức xét tuyển học bạ THPT.</p>
+            
+            <div class="admission-steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-user-graduate"></i>
+                        <span class="step-number">1</span>
+                    </div>
+                    <h3>Điều kiện xét tuyển</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Tốt nghiệp THPT hoặc tương đương</li>
+                        <li><i class="fas fa-check"></i> Đủ sức khỏe học tập theo quy định</li>
+                        <li><i class="fas fa-check"></i> Không trong thời gian thi hành án</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="step-number">2</span>
+                    </div>
+                    <h3>Hồ sơ đăng ký</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Phiếu đăng ký xét tuyển</li>
+                        <li><i class="fas fa-check"></i> Bản sao công chứng học bạ THPT</li>
+                        <li><i class="fas fa-check"></i> Bản sao công chứng bằng tốt nghiệp THPT</li>
+                        <li><i class="fas fa-check"></i> 02 ảnh 3x4 chụp trong 6 tháng gần nhất</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span class="step-number">3</span>
+                    </div>
+                    <h3>Thời gian xét tuyển</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Đợt 1: 01/03/2024 - 30/04/2024</li>
+                        <li><i class="fas fa-check"></i> Đợt 2: 01/05/2024 - 30/06/2024</li>
+                        <li><i class="fas fa-check"></i> Đợt 3: 01/07/2024 - 31/08/2024</li>
+                    </ul>
+                </div>
             </div>
-            <div class="step">
-                <h3>2. Hồ sơ đăng ký</h3>
-                <p>- Phiếu đăng ký xét tuyển.</p>
-                <p>- Bản sao công chứng học bạ THPT.</p>
-                <p>- Bản sao công chứng bằng tốt nghiệp THPT hoặc giấy chứng nhận tốt nghiệp tạm thời.</p>
-            </div>
-            <div class="step">
-                <h3>3. Thời gian xét tuyển</h3>
-                <p>- Nhận hồ sơ từ ngày 01/03/2025.</p>
-                <p>- Kết thúc xét tuyển khi đủ chỉ tiêu.</p>
-            </div>
-        </div>
-        <div class="apply-now">
-            <button>ĐĂNG KÝ NGAY</button>
         </div>
     </section>
 
+    <section class="majors">
+        <div class="container">
+            <h2>Ngành tuyển sinh</h2>
+            <div class="majors-grid">
+                <div class="major-item">
+                    <div class="major-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Công nghệ thông tin</h3>
+                    <p>Chỉ tiêu: 1000</p>
+                    <ul>
+                        <li>Lập trình Web</li>
+                        <li>Ứng dụng phần mềm</li>
+                        <li>An ninh mạng</li>
+                    </ul>
+                    <div class="major-info">
+                        <span><i class="fas fa-clock"></i> 2.5 năm</span>
+                        <span><i class="fas fa-users"></i> 40 SV/lớp</span>
+                    </div>
+                </div>
+
+                <div class="major-item">
+                    <div class="major-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Kinh tế</h3>
+                    <p>Chỉ tiêu: 800</p>
+                    <ul>
+                        <li>Digital Marketing</li>
+                        <li>Quản trị kinh doanh</li>
+                        <li>Tài chính ngân hàng</li>
+                    </ul>
+                    <div class="major-info">
+                        <span><i class="fas fa-clock"></i> 2.5 năm</span>
+                        <span><i class="fas fa-users"></i> 45 SV/lớp</span>
+                    </div>
+                </div>
+
+                <div class="major-item">
+                    <div class="major-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Thiết kế đồ họa</h3>
+                    <p>Chỉ tiêu: 500</p>
+                    <ul>
+                        <li>Thiết kế quảng cáo</li>
+                        <li>Thiết kế web</li>
+                        <li>Hoạt hình 3D</li>
+                    </ul>
+                    <div class="major-info">
+                        <span><i class="fas fa-clock"></i> 2.5 năm</span>
+                        <span><i class="fas fa-users"></i> 35 SV/lớp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="register" class="register">
+        <div class="container">
+            <h2>Đăng ký xét tuyển</h2>
+            <div class="register-content">
+                <form class="register-form">
+                    <div class="form-group">
+                        <label for="fullname">Họ và tên</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="birthday">Ngày sinh</label>
+                            <input type="date" id="birthday" name="birthday" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Giới tính</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Chọn giới tính</option>
+                                <option value="male">Nam</option>
+                                <option value="female">Nữ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="major">Ngành học đăng ký</label>
+                        <select id="major" name="major" required>
+                            <option value="">Chọn ngành học</option>
+                            <option value="cntt">Công nghệ thông tin</option>
+                            <option value="kt">Kinh tế</option>
+                            <option value="tk">Thiết kế đồ họa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ghi chú</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Đăng ký ngay</button>
+                </form>
+                <div class="register-info">
+                    <h3>Thông tin liên hệ</h3>
+                    <p><i class="fas fa-phone"></i> Hotline: 024 7300 1955</p>
+                    <p><i class="fas fa-envelope"></i> Email: tuyensinh@fpt.edu.vn</p>
+                    <p><i class="fas fa-clock"></i> Thời gian làm việc: 8h00 - 17h00</p>
+                    <div class="social-contact">
+                        <h4>Kết nối với chúng tôi</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-zalo"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
     <footer>
-        <p>&copy; 2025 FPT Polytechnic. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về FPT Polytechnic</h3>
+                <p>Đào tạo thực hành chất lượng cao theo nhu cầu doanh nghiệp</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Liên hệ</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 137 Nguyễn Thị Thập, Hà Nội</p>
+                <p><i class="fas fa-phone"></i> 024 7300 1955</p>
+                <p><i class="fas fa-envelope"></i> fptpoly@fpt.edu.vn</p>
+            </div>
+            <div class="footer-section">
+                <h3>Đường dẫn nhanh</h3>
+                <ul>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Quy chế đào tạo</a></li>
+                    <li><a href="#">Chính sách học phí</a></li>
+                    <li><a href="#">Hỗ trợ sinh viên</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FPT Polytechnic. All rights reserved.</p>
+        </div>
     </footer>
+
+    <div id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tin tức - FPT Polytechnic</title>
+    <meta name="description" content="Tin tức và sự kiện mới nhất từ FPT Polytechnic" />
+    <meta name="keywords" content="FPT, Polytechnic, tin tức, sự kiện, hoạt động" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+      .news-page {
+        padding: 50px 20px;
+      }
+
+      .news-filters {
+        margin-bottom: 30px;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .filter-button {
+        padding: 8px 20px;
+        border: 2px solid #FF6600;
+        background: transparent;
+        color: #FF6600;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .filter-button.active,
+      .filter-button:hover {
+        background: #FF6600;
+        color: white;
+      }
+
+      .news-search {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto 30px;
+        position: relative;
+      }
+
+      .news-search input {
+        width: 100%;
+        padding: 12px 20px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .news-search button {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: #666;
+        cursor: pointer;
+      }
+
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 40px;
+      }
+
+      .page-button {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        color: #666;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .page-button:hover,
+      .page-button.active {
+        background: #FF6600;
+        color: white;
+        border-color: #FF6600;
+      }
+
+      .news-empty {
+        text-align: center;
+        padding: 40px;
+        color: #666;
+      }
+
+      .news-empty i {
+        font-size: 48px;
+        color: #ddd;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .news-filters {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .filter-button {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="FPT Polytechnic Logo" />
+        FPT POLYTECHNIC
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="dao-tao.html">Đào tạo</a></li>
+          <li><a href="hoat-dong-sinh-vien.html">Hoạt động sinh viên</a></li>
+          <li><a href="tuyen-sinh.html">Tuyển sinh</a></li>
+          <li><a href="lien-he.html">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="news-page">
+      <h1>TIN TỨC & SỰ KIỆN</h1>
+      
+      <div class="news-filters">
+        <button class="filter-button active">Tất cả</button>
+        <button class="filter-button">Tin tức học tập</button>
+        <button class="filter-button">Hoạt động sinh viên</button>
+        <button class="filter-button">Tuyển sinh</button>
+        <button class="filter-button">Hợp tác doanh nghiệp</button>
+      </div>
+
+      <div class="news-search">
+        <input type="text" placeholder="Tìm kiếm tin tức..." />
+        <button><i class="fas fa-search"></i></button>
+      </div>
+
+      <div class="news-grid">
+        <!-- Tin 1 -->
+        <article>
+          <div class="news-image">
+            <img src="images/news1.jpg" alt="News 1" />
+            <span class="news-date">25/02/2024</span>
+          </div>
+          <div class="news-content">
+            <h3>Sinh viên FPT Polytechnic giành Quán quân "FPTHackathon 2024"</h3>
+            <p>FPT Edu Hackathon là cuộc thi tổ chức bởi FPT Education dành cho sinh viên.</p>
+            <a href="#" class="read-more" data-modal="news1">Xem thêm <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Tin 2 -->
+        <article>
+          <div class="news-image">
+            <img src="images/news1.jpg" alt="News 2" />
+            <span class="news-date">24/02/2024</span>
+          </div>
+          <div class="news-content">
+            <h3>Lễ tốt nghiệp kỳ Spring 2024 - Chào mừng tân kỹ sư</h3>
+            <p>Hơn 1000 sinh viên đã chính thức tốt nghiệp và nhận bằng trong lễ tốt nghiệp.</p>
+            <a href="#" class="read-more" data-modal="news2">Xem thêm <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Tin 3 -->
+        <article>
+          <div class="news-image">
+            <img src="images/news1.jpg" alt="News 3" />
+            <span class="news-date">23/02/2024</span>
+          </div>
+          <div class="news-content">
+            <h3>Workshop: "Xu hướng công nghệ AI trong năm 2024"</h3>
+            <p>Chuỗi workshop chia sẻ kiến thức về AI và Machine Learning cho sinh viên.</p>
+            <a href="#" class="read-more" data-modal="news3">Xem thêm <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Tin 4 -->
+        <article>
+          <div class="news-image">
+            <img src="images/news1.jpg" alt="News 4" />
+            <span class="news-date">22/02/2024</span>
+          </div>
+          <div class="news-content">
+            <h3>Ký kết hợp tác với Microsoft về đào tạo Cloud Computing</h3>
+            <p>FPT Polytechnic mở rộng hợp tác đào tạo với các đối tác công nghệ hàng đầu.</p>
+            <a href="#" class="read-more" data-modal="news4">Xem thêm <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Thêm các tin tức khác tương tự -->
+      </div>
+
+      <div class="pagination">
+        <a href="#" class="page-button active">1</a>
+        <a href="#" class="page-button">2</a>
+        <a href="#" class="page-button">3</a>
+        <a href="#" class="page-button"><i class="fas fa-chevron-right"></i></a>
+      </div>
+    </section>
+
+    <!-- News Modals (copy from index.html) -->
+    <!-- ... (copy all modal code from index.html) ... -->
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Về FPT Polytechnic</h3>
+          <p>Đào tạo thực hành chất lượng cao theo nhu cầu doanh nghiệp</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Liên hệ</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 137 Nguyễn Thị Thập, Hà Nội</p>
+          <p><i class="fas fa-phone"></i> 024 7300 1955</p>
+          <p><i class="fas fa-envelope"></i> fptpoly@fpt.edu.vn</p>
+        </div>
+        <div class="footer-section">
+          <h3>Đường dẫn nhanh</h3>
+          <ul>
+            <li><a href="#">Tuyển dụng</a></li>
+            <li><a href="#">Quy chế đào tạo</a></li>
+            <li><a href="#">Chính sách học phí</a></li>
+            <li><a href="#">Hỗ trợ sinh viên</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 FPT Polytechnic. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div id="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Filter buttons
+        const filterButtons = document.querySelectorAll('.filter-button');
+        filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            // Add filter logic here
+          });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.news-search input');
+        const searchButton = document.querySelector('.news-search button');
+        
+        searchButton.addEventListener('click', () => {
+          const searchTerm = searchInput.value.trim().toLowerCase();
+          // Add search logic here
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            // Add search logic here
+          }
+        });
+
+        // Pagination
+        const pageButtons = document.querySelectorAll('.page-button');
+        pageButtons.forEach(button => {
+          button.addEventListener('click', (e) => {
+            e.preventDefault();
+            pageButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            // Add pagination logic here
+          });
+        });
+
+        // Modal functionality (copy from index.html)
+        // ... (copy all modal JavaScript code from index.html) ...
+      });
+    </script>
+  </body>
+</html> 

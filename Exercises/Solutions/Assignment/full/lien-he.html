@@ -4,63 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liên hệ - FPT Polytechnic</title>
-    <meta name="description" content="Website chính thức của FPT Polytechnic">
-    <meta name="keywords" content="FPT, Polytechnic, tuyển sinh, đào tạo, tin tức">
+    <meta name="description" content="Thông tin liên hệ và địa chỉ các cơ sở của FPT Polytechnic">
+    <meta name="keywords" content="FPT, Polytechnic, liên hệ, địa chỉ, tư vấn">
     <meta name="author" content="FPT Polytechnic">
-    
+    <meta property="og:title" content="Liên hệ - FPT Polytechnic" />
+    <meta property="og:description" content="Thông tin liên hệ và địa chỉ các cơ sở của FPT Polytechnic" />
+    <meta property="og:image" content="images/banner-contact.jpg" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="logo">FPT POLYTECHNIC</div>
+        <div class="logo">
+            <img src="images/logo.png" alt="FPT Polytechnic Logo" />
+            FPT POLYTECHNIC
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Trang chủ</a></li>
                 <li><a href="dao-tao.html">Đào tạo</a></li>
                 <li><a href="hoat-dong-sinh-vien.html">Hoạt động sinh viên</a></li>
                 <li><a href="tuyen-sinh.html">Tuyển sinh</a></li>
-                <li><a href="lien-he.html">Liên hệ</a></li>
+                <li><a href="lien-he.html" class="active">Liên hệ</a></li>
             </ul>
         </nav>
-        <div class="search-bar">
-            <input type="text" placeholder="Tìm kiếm">
-            <button>Tìm kiếm</button>
-        </div>
     </header>
 
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Liên hệ với chúng tôi</h1>
+            <p>Chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7</p>
+        </div>
+        <img src="images/banner-contact.jpg" alt="Banner Liên hệ">
+    </section>
+
     <section class="contact-info">
-        <h2>Thông tin liên hệ</h2>
-        <p><strong>Địa chỉ:</strong> FPT Polytechnic, 137 Nguyễn Thị Thập, Hà Nội</p>
-        <p><strong>Điện thoại:</strong> 024 7300 1955</p>
-        <p><strong>Email:</strong> fptpoly@fpt.edu.vn</p>
+        <div class="container">
+            <h2>Thông tin liên hệ</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Địa chỉ</h3>
+                    <p>Tòa nhà FPT Polytechnic</p>
+                    <p>137 Nguyễn Thị Thập, Hà Nội</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Điện thoại</h3>
+                    <p>Hotline: 024 7300 1955</p>
+                    <p>Tư vấn: 0981 xxx xxx</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>fptpoly@fpt.edu.vn</p>
+                    <p>tuyensinh@fpt.edu.vn</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Giờ làm việc</h3>
+                    <p>Thứ 2 - Thứ 6: 8:00 - 17:00</p>
+                    <p>Thứ 7: 8:00 - 12:00</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="contact-form">
-        <h2>Gửi tin nhắn</h2>
-        <form action="#" method="post">
-            <label for="name">Họ và tên:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Nội dung:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Gửi tin nhắn</button>
-        </form>
-    </section>
+    <!-- <section class="contact-form">
+        <div class="container">
+            <h2>Gửi tin nhắn cho chúng tôi</h2>
+            <div class="form-content">
+                <form class="message-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Chủ đề</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Chọn chủ đề</option>
+                                <option value="tuvan">Tư vấn tuyển sinh</option>
+                                <option value="hoptac">Hợp tác doanh nghiệp</option>
+                                <option value="khac">Khác</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nội dung</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Gửi tin nhắn</button>
+                </form>
+                <div class="contact-social">
+                    <h3>Kết nối với chúng tôi</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="social-link youtube">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="social-link zalo">
+                            <i class="fas fa-comment"></i>
+                            <span>Zalo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
 
     <section class="map">
-        <h2>Bản đồ</h2>
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8884385862956!2d105.78414697510133!3d21.03724568061345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab3aaf6dc9a1%3A0xf1f5ef5d0412a50a!2sFPT%20Polytechnic!5e0!3m2!1svi!2s!4v1648393449377!5m2!1svi!2s" 
-            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
+        <div class="container">
+            <h2>Bản đồ</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8884385862956!2d105.78414697510133!3d21.03724568061345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab3aaf6dc9a1%3A0xf1f5ef5d0412a50a!2sFPT%20Polytechnic!5e0!3m2!1svi!2s!4v1648393449377!5m2!1svi!2s" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Câu hỏi thường gặp</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Làm thế nào để đăng ký tư vấn?</h3>
+                    <p>Bạn có thể điền form liên hệ trên website hoặc gọi trực tiếp đến hotline của chúng tôi.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Thời gian phản hồi là bao lâu?</h3>
+                    <p>Chúng tôi sẽ phản hồi trong vòng 24h kể từ khi nhận được thông tin của bạn.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Có thể đến tham quan trường không?</h3>
+                    <p>Có, bạn có thể đến tham quan trường vào giờ hành chính từ thứ 2 đến thứ 6.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Làm sao để tìm thông tin tuyển sinh?</h3>
+                    <p>Bạn có thể truy cập mục Tuyển sinh trên website hoặc liên hệ trực tiếp với phòng tuyển sinh.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 FPT Polytechnic. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về FPT Polytechnic</h3>
+                <p>Đào tạo thực hành chất lượng cao theo nhu cầu doanh nghiệp</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Liên hệ</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 137 Nguyễn Thị Thập, Hà Nội</p>
+                <p><i class="fas fa-phone"></i> 024 7300 1955</p>
+                <p><i class="fas fa-envelope"></i> fptpoly@fpt.edu.vn</p>
+            </div>
+            <div class="footer-section">
+                <h3>Đường dẫn nhanh</h3>
+                <ul>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Quy chế đào tạo</a></li>
+                    <li><a href="#">Chính sách học phí</a></li>
+                    <li><a href="#">Hỗ trợ sinh viên</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FPT Polytechnic. All rights reserved.</p>
+        </div>
     </footer>
+
+    <div id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </body>
 </html>

@@ -3,78 +3,463 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FPT Polytechnic</title>
-    <meta name="description" content="Website chính thức của FPT Polytechnic" />
-    <meta
-      name="keywords"
-      content="FPT, Polytechnic, tuyển sinh, đào tạo, tin tức"
-    />
+    <title>FPT Polytechnic - Hệ thống đào tạo lập trình viên quốc tế</title>
+    <meta name="description" content="Website chính thức của FPT Polytechnic - Hệ thống đào tạo lập trình viên quốc tế hàng đầu Việt Nam" />
+    <meta name="keywords" content="FPT, Polytechnic, tuyển sinh, đào tạo, tin tức, lập trình, công nghệ" />
     <meta name="author" content="FPT Polytechnic" />
-
+    <meta property="og:title" content="FPT Polytechnic - Hệ thống đào tạo lập trình viên quốc tế" />
+    <meta property="og:description" content="Website chính thức của FPT Polytechnic - Hệ thống đào tạo lập trình viên quốc tế hàng đầu Việt Nam" />
+    <meta property="og:image" content="images/banner.jpg" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        overflow-y: auto;
+      }
+
+      .modal-content {
+        background: white;
+        width: 90%;
+        max-width: 800px;
+        margin: 50px auto;
+        border-radius: 8px;
+        position: relative;
+        animation: modalShow 0.3s ease-out;
+      }
+
+      @keyframes modalShow {
+        from {
+          opacity: 0;
+          transform: translateY(-100px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .close-modal {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 30px;
+        color: #666;
+        cursor: pointer;
+        transition: color 0.3s;
+        z-index: 1;
+      }
+
+      .close-modal:hover {
+        color: #FF6600;
+      }
+
+      .modal-header {
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .modal-header h2 {
+        margin: 0;
+        padding-right: 40px;
+        color: #333;
+        font-size: 24px;
+      }
+
+      .modal-date {
+        color: #666;
+        font-size: 14px;
+        margin-top: 10px;
+        display: block;
+      }
+
+      .modal-body {
+        padding: 20px;
+      }
+
+      .modal-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .modal-body p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .modal-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .modal-gallery img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .modal-gallery img:hover {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .modal-content {
+          width: 95%;
+          margin: 20px auto;
+        }
+
+        .modal-gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .modal-header h2 {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .modal-gallery {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
-      <div class="logo">FPT POLYTECHNIC</div>
+      <div class="logo">
+        <img src="images/logo.png" alt="FPT Polytechnic Logo" />
+        FPT POLYTECHNIC
+      </div>
       <nav>
         <ul>
-          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="index.html" class="active">Trang chủ</a></li>
           <li><a href="dao-tao.html">Đào tạo</a></li>
           <li><a href="hoat-dong-sinh-vien.html">Hoạt động sinh viên</a></li>
           <li><a href="tuyen-sinh.html">Tuyển sinh</a></li>
           <li><a href="lien-he.html">Liên hệ</a></li>
         </ul>
       </nav>
-      <div class="search-bar">
-        <input type="text" placeholder="Tìm kiếm" />
-        <button>Tìm kiếm</button>
-      </div>
     </header>
 
     <section class="banner">
+      <div class="banner-content">
+        <h1>Chào mừng đến với FPT Polytechnic</h1>
+        <p>Khởi đầu sự nghiệp - Thành công tương lai</p>
+        <a href="tuyen-sinh.html" class="cta-button">Đăng ký ngay</a>
+      </div>
       <img src="images/banner.jpg" alt="Banner Tuyển Sinh" />
+    </section>
+
+    <section class="highlights">
+      <div class="highlight-container">
+        <div class="highlight-item">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>20.000+</h3>
+          <p>Sinh viên đang theo học</p>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-building"></i>
+          <h3>10+</h3>
+          <p>Cơ sở đào tạo</p>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-users"></i>
+          <h3>98%</h3>
+          <p>Sinh viên có việc làm</p>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-handshake"></i>
+          <h3>500+</h3>
+          <p>Doanh nghiệp đối tác</p>
+        </div>
+      </div>
     </section>
 
     <section class="news">
       <h2>TIN TỨC HỌC TẬP</h2>
       <div class="news-grid">
         <article>
-          <img src="images/news1.jpg" alt="News 1" />
-          <h3>Sinh viên FPT Polytechnic giành Quán quân "FPTHackathon 2018"</h3>
-          <p>
-            FPT Edu Hackathon là cuộc thi tổ chức bởi FPT Education dành cho
-            sinh viên.
-          </p>
+          <div class="news-image">
+            <img src="images/news1.jpg" alt="News 1" />
+            <span class="news-date">25/02/2024</span>
+          </div>
+          <div class="news-content">
+            <h3>Sinh viên FPT Polytechnic giành Quán quân "FPTHackathon 2024"</h3>
+            <p>FPT Edu Hackathon là cuộc thi tổ chức bởi FPT Education dành cho sinh viên.</p>
+            <a href="#" class="read-more" data-modal="news1">Xem thêm <i class="fas fa-arrow-right"></i></a>
+          </div>
         </article>
         <article>
-          <img src="images/news1.jpg" alt="News 1" />
-          <h3>Sinh viên FPT Polytechnic giành Quán quân "FPTHackathon 2018"</h3>
-          <p>
-            FPT Edu Hackathon là cuộc thi tổ chức bởi FPT Education dành cho
-            sinh viên.
-          </p>
+          <div class="news-image">
+            <img src="images/news1.jpg" alt="News 2" />
+            <span class="news-date">24/02/2024</span>
+          </div>
+          <div class="news-content">
+            <h3>Lễ tốt nghiệp kỳ Spring 2024 - Chào mừng tân kỹ sư</h3>
+            <p>Hơn 1000 sinh viên đã chính thức tốt nghiệp và nhận bằng trong lễ tốt nghiệp.</p>
+            <a href="#" class="read-more" data-modal="news2">Xem thêm <i class="fas fa-arrow-right"></i></a>
+          </div>
         </article>
         <article>
-          <img src="images/news1.jpg" alt="News 1" />
-          <h3>Sinh viên FPT Polytechnic giành Quán quân "FPTHackathon 2018"</h3>
-          <p>
-            FPT Edu Hackathon là cuộc thi tổ chức bởi FPT Education dành cho
-            sinh viên.
-          </p>
+          <div class="news-image">
+            <img src="images/news1.jpg" alt="News 3" />
+            <span class="news-date">23/02/2024</span>
+          </div>
+          <div class="news-content">
+            <h3>Workshop: "Xu hướng công nghệ AI trong năm 2024"</h3>
+            <p>Chuỗi workshop chia sẻ kiến thức về AI và Machine Learning cho sinh viên.</p>
+            <a href="#" class="read-more" data-modal="news3">Xem thêm <i class="fas fa-arrow-right"></i></a>
+          </div>
         </article>
         <article>
-          <img src="images/news1.jpg" alt="News 1" />
-          <h3>Sinh viên FPT Polytechnic giành Quán quân "FPTHackathon 2018"</h3>
-          <p>
-            FPT Edu Hackathon là cuộc thi tổ chức bởi FPT Education dành cho
-            sinh viên.
-          </p>
+          <div class="news-image">
+            <img src="images/news1.jpg" alt="News 4" />
+            <span class="news-date">22/02/2024</span>
+          </div>
+          <div class="news-content">
+            <h3>Ký kết hợp tác với Microsoft về đào tạo Cloud Computing</h3>
+            <p>FPT Polytechnic mở rộng hợp tác đào tạo với các đối tác công nghệ hàng đầu.</p>
+            <a href="#" class="read-more" data-modal="news4">Xem thêm <i class="fas fa-arrow-right"></i></a>
+          </div>
         </article>
+      </div>
+      <div class="view-all">
+        <a href="tin-tuc.html" class="view-all-button">Xem tất cả tin tức</a>
+      </div>
+    </section>
+
+    <section class="partners">
+      <h2>ĐỐI TÁC CỦA CHÚNG TÔI</h2>
+      <div class="partner-logos">
+        <img src="images/partner1.png" alt="Microsoft" />
+        <img src="images/partner2.png" alt="Google" />
+        <img src="images/partner3.png" alt="Amazon" />
+        <img src="images/partner4.png" alt="IBM" />
+        <img src="images/partner5.png" alt="Intel" />
       </div>
     </section>
 
     <footer>
-      <p>&copy; 2025 FPT Polytechnic. All rights reserved.</p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Về FPT Polytechnic</h3>
+          <p>Đào tạo thực hành chất lượng cao theo nhu cầu doanh nghiệp</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Liên hệ</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 137 Nguyễn Thị Thập, Hà Nội</p>
+          <p><i class="fas fa-phone"></i> 024 7300 1955</p>
+          <p><i class="fas fa-envelope"></i> fptpoly@fpt.edu.vn</p>
+        </div>
+        <div class="footer-section">
+          <h3>Đường dẫn nhanh</h3>
+          <ul>
+            <li><a href="#">Tuyển dụng</a></li>
+            <li><a href="#">Quy chế đào tạo</a></li>
+            <li><a href="#">Chính sách học phí</a></li>
+            <li><a href="#">Hỗ trợ sinh viên</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 FPT Polytechnic. All rights reserved.</p>
+      </div>
     </footer>
+
+    <div id="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- News Modals -->
+    <div class="modal" id="news1">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <h2>Sinh viên FPT Polytechnic giành Quán quân "FPTHackathon 2024"</h2>
+          <span class="modal-date">25/02/2024</span>
+        </div>
+        <div class="modal-body">
+          <img src="images/news1.jpg" alt="News 1 Detail" class="modal-image">
+          <p>FPT Edu Hackathon là cuộc thi lập trình được tổ chức bởi Tổ chức Giáo dục FPT, nhằm tạo sân chơi cho sinh viên thể hiện đam mê và tài năng trong lĩnh vực công nghệ. Cuộc thi năm nay có sự tham gia của hơn 200 đội thi đến từ các trường đại học và cao đẳng trên toàn quốc.</p>
+          <p>Đội thi đến từ FPT Polytechnic đã xuất sắc vượt qua nhiều đối thủ mạnh để giành giải Nhất với giải pháp "Smart Education" - một nền tảng học tập thông minh tích hợp AI. Giải pháp này được đánh giá cao về tính sáng tạo và khả năng ứng dụng thực tế trong việc cải thiện trải nghiệm học tập.</p>
+          <div class="modal-gallery">
+            <img src="images/news1.jpg" alt="Gallery 1">
+            <img src="images/news1.jpg" alt="Gallery 2">
+            <img src="images/news1.jpg" alt="Gallery 3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="news2">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <h2>Lễ tốt nghiệp kỳ Spring 2024 - Chào mừng tân kỹ sư</h2>
+          <span class="modal-date">24/02/2024</span>
+        </div>
+        <div class="modal-body">
+          <img src="images/news1.jpg" alt="News 2 Detail" class="modal-image">
+          <p>Trong không khí trang trọng và đầy xúc động, hơn 1000 sinh viên FPT Polytechnic đã chính thức nhận bằng tốt nghiệp trong lễ tốt nghiệp kỳ Spring 2024. Buổi lễ có sự tham dự của Ban Giám hiệu nhà trường, các thầy cô giáo, đại diện doanh nghiệp đối tác và đông đảo phụ huynh học sinh.</p>
+          <div class="modal-gallery">
+            <img src="images/news1.jpg" alt="Gallery 1">
+            <img src="images/news1.jpg" alt="Gallery 2">
+            <img src="images/news1.jpg" alt="Gallery 3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="news3">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <h2>Workshop: "Xu hướng công nghệ AI trong năm 2024"</h2>
+          <span class="modal-date">23/02/2024</span>
+        </div>
+        <div class="modal-body">
+          <img src="images/news1.jpg" alt="News 3 Detail" class="modal-image">
+          <p>Workshop "Xu hướng công nghệ AI trong năm 2024" đã diễn ra thành công với sự tham gia của hơn 300 sinh viên. Chương trình có sự góp mặt của các chuyên gia hàng đầu trong lĩnh vực AI và Machine Learning, mang đến những kiến thức và xu hướng mới nhất về công nghệ AI.</p>
+          <div class="modal-gallery">
+            <img src="images/news1.jpg" alt="Gallery 1">
+            <img src="images/news1.jpg" alt="Gallery 2">
+            <img src="images/news1.jpg" alt="Gallery 3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="news4">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <h2>Ký kết hợp tác với Microsoft về đào tạo Cloud Computing</h2>
+          <span class="modal-date">22/02/2024</span>
+        </div>
+        <div class="modal-body">
+          <img src="images/news1.jpg" alt="News 4 Detail" class="modal-image">
+          <p>FPT Polytechnic và Microsoft vừa ký kết thỏa thuận hợp tác chiến lược về đào tạo Cloud Computing. Theo đó, sinh viên FPT Polytechnic sẽ được tiếp cận với các công nghệ mới nhất của Microsoft Azure, đồng thời có cơ hội thực tập và làm việc tại Microsoft.</p>
+          <div class="modal-gallery">
+            <img src="images/news1.jpg" alt="Gallery 1">
+            <img src="images/news1.jpg" alt="Gallery 2">
+            <img src="images/news1.jpg" alt="Gallery 3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script>
+      // Modal functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const modals = document.querySelectorAll('.modal');
+        const readMoreButtons = document.querySelectorAll('.read-more');
+        const closeButtons = document.querySelectorAll('.close-modal');
+
+        // Open modal function
+        function openModal(modalId) {
+          const modal = document.getElementById(modalId);
+          if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+          }
+        }
+
+        // Close modal function
+        function closeModal(modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+
+        // Close all modals function
+        function closeAllModals() {
+          modals.forEach(modal => {
+            closeModal(modal);
+          });
+        }
+
+        // Event listeners for read more buttons
+        readMoreButtons.forEach(button => {
+          button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = button.getAttribute('data-modal');
+            openModal(modalId);
+          });
+        });
+
+        // Event listeners for close buttons
+        closeButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const modal = button.closest('.modal');
+            closeModal(modal);
+          });
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+          if (e.target.classList.contains('modal')) {
+            closeModal(e.target);
+          }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            closeAllModals();
+          }
+        });
+
+        // Gallery image click handler
+        const galleryImages = document.querySelectorAll('.modal-gallery img');
+        galleryImages.forEach(img => {
+          img.addEventListener('click', () => {
+            const fullImage = img.src;
+            window.open(fullImage, '_blank');
+          });
+        });
+
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 100) {
+            backToTopButton.classList.add('visible');
+          } else {
+            backToTopButton.classList.remove('visible');
+          }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
   </body>
 </html>

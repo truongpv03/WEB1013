@@ -4,58 +4,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoạt động sinh viên - FPT Polytechnic</title>
-    <meta name="description" content="Website chính thức của FPT Polytechnic">
-    <meta name="keywords" content="FPT, Polytechnic, tuyển sinh, đào tạo, tin tức">
+    <meta name="description" content="Khám phá đời sống sinh viên sôi động tại FPT Polytechnic">
+    <meta name="keywords" content="FPT, Polytechnic, hoạt động sinh viên, câu lạc bộ, sự kiện">
     <meta name="author" content="FPT Polytechnic">
-    
+    <meta property="og:title" content="Hoạt động sinh viên - FPT Polytechnic" />
+    <meta property="og:description" content="Khám phá đời sống sinh viên sôi động tại FPT Polytechnic" />
+    <meta property="og:image" content="images/banner-hoat-dong.jpg" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="logo">FPT POLYTECHNIC</div>
+        <div class="logo">
+            <img src="images/logo.png" alt="FPT Polytechnic Logo" />
+            FPT POLYTECHNIC
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Trang chủ</a></li>
                 <li><a href="dao-tao.html">Đào tạo</a></li>
-                <li><a href="hoat-dong-sinh-vien.html">Hoạt động sinh viên</a></li>
+                <li><a href="hoat-dong-sinh-vien.html" class="active">Hoạt động sinh viên</a></li>
                 <li><a href="tuyen-sinh.html">Tuyển sinh</a></li>
                 <li><a href="lien-he.html">Liên hệ</a></li>
             </ul>
         </nav>
-        <div class="search-bar">
-            <input type="text" placeholder="Tìm kiếm">
-            <button>Tìm kiếm</button>
-        </div>
     </header>
 
     <section class="banner">
+        <div class="banner-content">
+            <h1>Hoạt động sinh viên</h1>
+            <p>Trải nghiệm cuộc sống sinh viên năng động và sáng tạo</p>
+        </div>
         <img src="images/banner-hoat-dong.jpg" alt="Banner Hoạt động sinh viên">
     </section>
 
+    <section class="upcoming-events">
+        <div class="container">
+            <h2>Sự kiện sắp diễn ra</h2>
+            <div class="event-timeline">
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">Tháng 3</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Ngày hội việc làm 2024</h3>
+                        <p>Cơ hội gặp gỡ hơn 50 doanh nghiệp hàng đầu trong ngành công nghệ</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 08:00 - 17:00</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Hội trường A</span>
+                        </div>
+                        <a href="#" class="event-btn">Đăng ký tham gia</a>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="day">20</span>
+                        <span class="month">Tháng 3</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Workshop: Kỹ năng phỏng vấn</h3>
+                        <p>Chia sẻ kinh nghiệm từ chuyên gia tuyển dụng các công ty lớn</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 14:00 - 17:00</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Phòng seminar</span>
+                        </div>
+                        <a href="#" class="event-btn">Đăng ký tham gia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="student-activities">
-        <h2>Hoạt động sinh viên</h2>
-        <p>FPT Polytechnic tổ chức nhiều hoạt động ngoại khóa hấp dẫn dành cho sinh viên.</p>
-        <div class="activity-list">
-            <article>
-                <img src="images/event1.jpg" alt="Sự kiện 1">
-                <h3>Chương trình Chào đón Tân sinh viên</h3>
-                <p>Sự kiện giúp sinh viên mới hòa nhập với môi trường học tập và giao lưu với bạn bè.</p>
-            </article>
-            <article>
-                <img src="images/event2.jpg" alt="Sự kiện 2">
-                <h3>Giải thể thao sinh viên</h3>
-                <p>Giải đấu bóng đá, cầu lông, bóng rổ tạo sân chơi rèn luyện thể chất cho sinh viên.</p>
-            </article>
-            <article>
-                <img src="images/event3.jpg" alt="Sự kiện 3">
-                <h3>Cuộc thi Hùng biện tiếng Anh</h3>
-                <p>Cuộc thi giúp sinh viên nâng cao kỹ năng giao tiếp và tự tin thể hiện bản thân.</p>
-            </article>
+        <div class="container">
+            <h2>Hoạt động nổi bật</h2>
+            <div class="activity-grid">
+                <article class="activity-item">
+                    <div class="activity-image">
+                        <img src="images/event1.jpg" alt="Chào đón tân sinh viên">
+                        <div class="activity-overlay">
+                            <a href="#" class="view-more">Xem thêm</a>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Chương trình Chào đón Tân sinh viên</h3>
+                        <p>Sự kiện giúp sinh viên mới hòa nhập với môi trường học tập và giao lưu với bạn bè.</p>
+                        <div class="activity-meta">
+                            <span><i class="fas fa-users"></i> 500+ tham gia</span>
+                            <span><i class="fas fa-calendar"></i> Hàng năm</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="activity-item">
+                    <div class="activity-image">
+                        <img src="images/event2.jpg" alt="Giải thể thao">
+                        <div class="activity-overlay">
+                            <a href="#" class="view-more">Xem thêm</a>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Giải thể thao sinh viên</h3>
+                        <p>Giải đấu bóng đá, cầu lông, bóng rổ tạo sân chơi rèn luyện thể chất cho sinh viên.</p>
+                        <div class="activity-meta">
+                            <span><i class="fas fa-users"></i> 300+ tham gia</span>
+                            <span><i class="fas fa-calendar"></i> Quý 2/2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="activity-item">
+                    <div class="activity-image">
+                        <img src="images/event3.jpg" alt="Cuộc thi tiếng Anh">
+                        <div class="activity-overlay">
+                            <a href="#" class="view-more">Xem thêm</a>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <h3>Cuộc thi Hùng biện tiếng Anh</h3>
+                        <p>Cuộc thi giúp sinh viên nâng cao kỹ năng giao tiếp và tự tin thể hiện bản thân.</p>
+                        <div class="activity-meta">
+                            <span><i class="fas fa-users"></i> 200+ tham gia</span>
+                            <span><i class="fas fa-calendar"></i> Quý 3/2024</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="clubs">
+        <div class="container">
+            <h2>Câu lạc bộ sinh viên</h2>
+            <div class="clubs-grid">
+                <div class="club-item">
+                    <div class="club-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>F-Code</h3>
+                    <p>CLB Lập trình</p>
+                    <ul class="club-activities">
+                        <li>Chia sẻ kiến thức lập trình</li>
+                        <li>Thực hành dự án thực tế</li>
+                        <li>Giao lưu với chuyên gia</li>
+                    </ul>
+                    <a href="#" class="join-btn">Tham gia ngay</a>
+                </div>
+
+                <div class="club-item">
+                    <div class="club-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Media</h3>
+                    <p>CLB Truyền thông</p>
+                    <ul class="club-activities">
+                        <li>Sản xuất nội dung</li>
+                        <li>Quay phim, chụp ảnh</li>
+                        <li>Tổ chức sự kiện</li>
+                    </ul>
+                    <a href="#" class="join-btn">Tham gia ngay</a>
+                </div>
+
+                <div class="club-item">
+                    <div class="club-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>FPT Music</h3>
+                    <p>CLB Âm nhạc</p>
+                    <ul class="club-activities">
+                        <li>Biểu diễn văn nghệ</li>
+                        <li>Học hát, chơi nhạc</li>
+                        <li>Tổ chức mini show</li>
+                    </ul>
+                    <a href="#" class="join-btn">Tham gia ngay</a>
+                </div>
+
+                <div class="club-item">
+                    <div class="club-icon">
+                        <i class="fas fa-volleyball-ball"></i>
+                    </div>
+                    <h3>FPT Sports</h3>
+                    <p>CLB Thể thao</p>
+                    <ul class="club-activities">
+                        <li>Tổ chức giải đấu</li>
+                        <li>Rèn luyện thể chất</li>
+                        <li>Giao lưu thể thao</li>
+                    </ul>
+                    <a href="#" class="join-btn">Tham gia ngay</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 FPT Polytechnic. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về FPT Polytechnic</h3>
+                <p>Đào tạo thực hành chất lượng cao theo nhu cầu doanh nghiệp</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Liên hệ</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 137 Nguyễn Thị Thập, Hà Nội</p>
+                <p><i class="fas fa-phone"></i> 024 7300 1955</p>
+                <p><i class="fas fa-envelope"></i> fptpoly@fpt.edu.vn</p>
+            </div>
+            <div class="footer-section">
+                <h3>Đường dẫn nhanh</h3>
+                <ul>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Quy chế đào tạo</a></li>
+                    <li><a href="#">Chính sách học phí</a></li>
+                    <li><a href="#">Hỗ trợ sinh viên</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FPT Polytechnic. All rights reserved.</p>
+        </div>
     </footer>
+
+    <div id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </body>
 </html>
